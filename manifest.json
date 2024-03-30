@@ -1,0 +1,16 @@
+{
+    "manifest_version": 3,
+    "name": "Dashboard",
+    "version": "1.0",
+    "permissions": [
+        "bookmarks",
+        "tabs"
+    ],
+    "host_permissions": [
+        "*://*/*"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {}
+}
