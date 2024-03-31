@@ -4,7 +4,8 @@
     "version": "1.0",
     "permissions": [
         "bookmarks",
-        "tabs"
+        "tabs",
+        "storage"
     ],
     "host_permissions": [
         "*://*/*"
@@ -12,5 +13,11 @@
     "background": {
         "service_worker": "background.js"
     },
-    "action": {}
+    "action": {
+        "default_popup": "options.html"
+    },
+    "options_ui": {
+        "page": "options.html",
+        "open_in_tab": true
+    }
 }

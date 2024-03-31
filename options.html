@@ -1,0 +1,65 @@
+<html style="height:100px;">
+    <head>
+        <title>Options</title>
+        <style>
+            body {
+                width: 300px;
+            }
+            input {
+                width: 100%;
+                border-style: hidden;
+                border-bottom-style: dotted;
+                outline-width: 0;
+            }
+            button {
+                width: 100%;
+            }
+            .bookmark-item-button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 0;
+                padding:5px;
+                outline: none;
+                border-radius: 5px;
+                cursor: pointer; /* Change cursor to pointer on hover */
+                transform: scale(1);
+                transition: 0.15s all ease-in-out;
+            }
+            .bookmark-item-button:hover, .bookmark-item-button:focus {
+                background-color: beige;
+            }
+            .bookmark-item-button img {
+                height: 20px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div style="display:flex;flex-direction:column;gap:18px;padding:10px;">
+            <div style="display:flex;align-items:center;">
+                <div style="flex:9;"><span style="font-size:2em;"><b>Options</b></span></div>
+                <div style="flex:1;">
+                    <button id="openDashboardButton" class="bookmark-item-button">
+                        <img src="assets/pop-out.svg" alt="pop-out" style="width:100%;height:auto;">
+                    </button>
+                </div>
+            </div>
+            <!-- Top -->
+            <div >
+                <!-- Bookmarks Bar Name: -->
+                <div>
+                    <label for="bookmarksBarName">Bookmarks Bar Name:</label>
+                    <input type="text" id="bookmarksBarName">
+                </div>
+    
+                <!-- Save -->
+                <div style="margin-top:12px;">
+                    <button class="bookmark-item-button" id="saveButton">Save</button>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <script src="options.js"></script>
+</html>

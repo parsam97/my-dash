@@ -147,14 +147,16 @@ function setupCustomFocus(containerSelector) {
 async function loadBookmarks() {
     return new Promise((resolve, reject) => {
         chrome.bookmarks.getTree(function (bookmarkTreeNodes) {
-            var bookmarksFolder = findBookmarksFolder(bookmarkTreeNodes, 'Bookmarks');
-            if (bookmarksFolder) {
-                listFoldersAndBookmarks(bookmarksFolder);
-            } else {
-                console.error('The "Bookmarks" folder was not found.');
-            }
-
-            resolve();
+            chrome.storage.local.get(['bookmarksBarName'], function(result) {
+                var bookmarksBarName = result.bookmarksBarName;
+                var bookmarksFolder = findBookmarksFolder(bookmarkTreeNodes, bookmarksBarName);
+                if (bookmarksFolder) {
+                    listFoldersAndBookmarks(bookmarksFolder);
+                } else {
+                    console.error('The "' + bookmarksBarName + '" folder was not found.');
+                }
+                resolve();
+            });
         });
     });
 }
