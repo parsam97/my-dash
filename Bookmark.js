@@ -20,8 +20,9 @@ class Bookmark {
     }
 
     setNewBookmark() {
+        if (this.bm_item.children) this.title = this.bm_item.title;
+
         this.id = this.bm_item.id;
-        this.title = this.bm_item.title;
         this.url = this.bm_item.url;
         this.parentId = this.bm_item.parentId;
         this.children = this.bm_item.children;
@@ -49,8 +50,8 @@ class Bookmark {
         container.appendChild(iconCol);
 
         // Title column (if there is)
-        this.title = this.title.trim();
-        if (this.title.length > 0) {
+        if (this.title && this.title.length > 0) {
+            this.title = this.title.trim();
             const titleCol = this.createEl('div', ['bookmark-col']);
             titleCol.appendChild(this.spanTextElement)
             container.appendChild(titleCol);
