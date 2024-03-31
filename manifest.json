@@ -10,6 +10,9 @@
     "host_permissions": [
         "*://*/*"
     ],
+    "chrome_url_overrides": {
+        "newtab": "dashboard.html"
+    },
     "background": {
         "service_worker": "background.js"
     },
