@@ -26,9 +26,14 @@ ul {
     display: flex;
     flex-direction: column;
     justify-content: center; /* Centers content vertically in each column */
-    align-items: center; /* Centers content horizontally in each column */
     overflow: auto; /* Allows scrolling if content overflows */
     gap: 0.5em;
+}
+.alignStart {
+    align-items: flex-start;
+}
+.alignEnd {
+    align-items: flex-end;
 }
 
 /* Bookmark columns */
